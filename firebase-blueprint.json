@@ -1,0 +1,219 @@
+{
+  "entities": {
+    "RegisteredStudent": {
+      "title": "RegisteredStudent",
+      "description": "Student registration profile with contact info and progress",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "parentPhone": { "type": "string" },
+        "grade": { "type": "string" },
+        "governorate": { "type": "string" },
+        "registeredAt": { "type": "string" },
+        "stars": { "type": "number" },
+        "completedExamsCount": { "type": "number" },
+        "solvedProblemsCount": { "type": "number" }
+      },
+      "required": ["id", "name", "phone", "grade"]
+    },
+    "EngineerSubmission": {
+      "title": "EngineerSubmission",
+      "description": "Student solution submission for high-level engineer physics problems",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "problemId": { "type": "string" },
+        "problemTitle": { "type": "string" },
+        "studentName": { "type": "string" },
+        "grade": { "type": "string" },
+        "numericalAnswer": { "type": "string" },
+        "writtenSteps": { "type": "string" },
+        "stepsImageUrl": { "type": "string" },
+        "status": { "type": "string" },
+        "starsAwarded": { "type": "number" },
+        "teacherFeedback": { "type": "string" },
+        "submittedAt": { "type": "string" },
+        "gradedAt": { "type": "string" }
+      },
+      "required": ["id", "problemId", "studentName", "grade", "status"]
+    },
+    "Exam": {
+      "title": "Exam",
+      "description": "Physics exam containing questions and settings",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "grade": { "type": "string" },
+        "title": { "type": "string" },
+        "unitTitle": { "type": "string" },
+        "timeLimitMinutes": { "type": "number" },
+        "totalMarks": { "type": "number" },
+        "createdAt": { "type": "string" },
+        "questions": { "type": "array" }
+      },
+      "required": ["id", "grade", "title"]
+    },
+    "ExamSubmission": {
+      "title": "ExamSubmission",
+      "description": "Student submission for an exam",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "examId": { "type": "string" },
+        "examTitle": { "type": "string" },
+        "studentName": { "type": "string" },
+        "studentPhone": { "type": "string" },
+        "grade": { "type": "string" },
+        "score": { "type": "number" },
+        "totalMarks": { "type": "number" },
+        "submittedAt": { "type": "string" },
+        "cheatAlertsCount": { "type": "number" },
+        "answers": { "type": "object" },
+        "isGraded": { "type": "boolean" },
+        "teacherNotes": { "type": "string" },
+        "gradedAt": { "type": "string" }
+      },
+      "required": ["id", "examId", "studentName", "grade", "isGraded"]
+    },
+    "Homework": {
+      "title": "Homework",
+      "description": "Physics homework assignment sheet",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "grade": { "type": "string" },
+        "title": { "type": "string" },
+        "chapter": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "description": { "type": "string" },
+        "dueDate": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "submissionsCount": { "type": "number" }
+      },
+      "required": ["id", "grade", "title"]
+    },
+    "PdfDocument": {
+      "title": "PdfDocument",
+      "description": "Physics lecture PDF notes or formula book",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "grade": { "type": "string" },
+        "title": { "type": "string" },
+        "chapter": { "type": "string" },
+        "fileSize": { "type": "string" },
+        "downloadUrl": { "type": "string" },
+        "previewSnippet": { "type": "string" },
+        "pagesCount": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "grade", "title"]
+    },
+    "EngineerProblem": {
+      "title": "EngineerProblem",
+      "description": "High difficulty problem for aspiring engineers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "grade": { "type": "string" },
+        "title": { "type": "string" },
+        "difficulty": { "type": "number" },
+        "statement": { "type": "string" },
+        "diagramUrl": { "type": "string" },
+        "unit": { "type": "string" },
+        "hints": { "type": "array" },
+        "numericalAnswer": { "type": "string" },
+        "solutionSteps": { "type": "array" },
+        "engineerInsight": { "type": "string" }
+      },
+      "required": ["id", "grade", "title", "statement"]
+    },
+    "BoardCapture": {
+      "title": "BoardCapture",
+      "description": "Classroom blackboard photograph capture",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "grade": { "type": "string" },
+        "title": { "type": "string" },
+        "lectureDate": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "unit": { "type": "string" },
+        "notes": { "type": "string" }
+      },
+      "required": ["id", "grade", "title"]
+    },
+    "Announcement": {
+      "title": "Announcement",
+      "description": "Course announcements from Eng Mohamed Alaa",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "content": { "type": "string" },
+        "date": { "type": "string" },
+        "priority": { "type": "string" }
+      },
+      "required": ["id", "title", "content"]
+    },
+    "Complaint": {
+      "title": "Complaint",
+      "description": "Student message or developer ticket",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "studentName": { "type": "string" },
+        "phone": { "type": "string" },
+        "grade": { "type": "string" },
+        "category": { "type": "string" },
+        "message": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["id", "studentName", "message"]
+    }
+  },
+  "firestore": {
+    "/students/{studentId}": {
+      "schema": "RegisteredStudent",
+      "description": "Registered students profiles roster"
+    },
+    "/engineer_submissions/{submissionId}": {
+      "schema": "EngineerSubmission",
+      "description": "Student solution submissions for engineer problems"
+    },
+    "/exams/{examId}": {
+      "schema": "Exam",
+      "description": "Physics exams collection"
+    },
+    "/submissions/{submissionId}": {
+      "schema": "ExamSubmission",
+      "description": "Student exam submissions and teacher graded reports"
+    },
+    "/homeworks/{homeworkId}": {
+      "schema": "Homework",
+      "description": "Weekly homework sheets"
+    },
+    "/pdfs/{pdfId}": {
+      "schema": "PdfDocument",
+      "description": "Physics lecture summaries and PDF books"
+    },
+    "/engineer_problems/{problemId}": {
+      "schema": "EngineerProblem",
+      "description": "High-level physics problems"
+    },
+    "/board_captures/{boardId}": {
+      "schema": "BoardCapture",
+      "description": "Blackboard lecture captures"
+    },
+    "/announcements/{announcementId}": {
+      "schema": "Announcement",
+      "description": "Announcements"
+    },
+    "/complaints/{complaintId}": {
+      "schema": "Complaint",
+      "description": "Feedback and complaints tickets"
+    }
+  }
+}
